@@ -46,7 +46,7 @@ class addViewController: UIViewController, UINavigationControllerDelegate, UIIma
         heightSlide.addTarget(self, action: #selector(addViewController.slided(_:)), for: .valueChanged)
         
         // Set degree picker
-        statusPicker = UIPickerView(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
+        statusPicker = UIPickerView(frame: CGRect(x: 0, y: 0, width: 70, height: 80))
         statusPicker.center = CGPoint(x: 105, y: 380)
         statusPicker.delegate = statusViewController
         statusPicker.dataSource = statusViewController
@@ -64,13 +64,14 @@ class addViewController: UIViewController, UINavigationControllerDelegate, UIIma
         firstName.text = item.firstName
         lastName.text = item.lastName
         netID.text = item.netID
-        genderLabel.text = item.genderLabel
         heightLabel.text = item.heightLabel
-        if item.genderLabel == "female" {
-            genderSwitch.isOn = false
+        if item.genderBool == true {
+            genderSwitch.isOn = true
+            genderLabel.text = "Male"
         }
         else {
-            genderSwitch.isOn = true
+            genderSwitch.isOn = false
+            genderLabel.text = "Female"
         }
         cityText.text = item.cityText
         //degree.text = item.degree
@@ -78,10 +79,7 @@ class addViewController: UIViewController, UINavigationControllerDelegate, UIIma
         hobbyText.text = item.hobbyText
         
         let status = item.status
-        if status == .select {
-            statusPicker.selectRow(0, inComponent: 0, animated: true)
-        }
-        else if status == .bs {
+        if status == .bs {
             statusPicker.selectRow(1, inComponent: 0, animated: true)
         }
         else if status == .ms {
@@ -90,8 +88,11 @@ class addViewController: UIViewController, UINavigationControllerDelegate, UIIma
         else if status == .meng  {
             statusPicker.selectRow(3, inComponent: 0, animated: true)
         }
-        else {
+        else if status == .phD {
             statusPicker.selectRow(4, inComponent: 0, animated: true)
+        }
+        else {
+            statusPicker.selectRow(0, inComponent: 0, animated: true)
         }
         statusViewController.setValue(item.status)
     }
@@ -117,10 +118,10 @@ class addViewController: UIViewController, UINavigationControllerDelegate, UIIma
     // Switch handler
     func switched(_ sender: UISwitch!) {
         if sender.isOn {
-            genderLabel.text = "male"
+            genderLabel.text = "Male"
         }
         else {
-            genderLabel.text = "female"
+            genderLabel.text = "Female"
         }
     }
     
@@ -133,13 +134,13 @@ class addViewController: UIViewController, UINavigationControllerDelegate, UIIma
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let firstName = firstName.text, let lastName = lastName.text, let netID = netID.text, let image = imageView.image {
+        if let firstName = firstName.text, let lastName = lastName.text, let netID = netID.text {
             if self.firstName.text != "" && self.lastName.text != "" && self.netID.text != "" {
-                item = Item(image: image, firstName: firstName, lastName: lastName, netID: netID, genderLabel: genderLabel.text, heightLabel: heightLabel.text, cityText: cityText.text, status: statusViewController.getValue(), codingLanguage: codingLanguage.text, hobbyText: hobbyText.text)
+                item = Item(image: imageView.image!, firstName: firstName, lastName: lastName, netID: netID, genderBool: genderSwitch.isOn, heightLabel: heightLabel.text, cityText: cityText.text, status: statusViewController.getValue(), codingLanguage: codingLanguage.text, hobbyText: hobbyText.text)
             }
                 // Pop up an 2s' alert
             else {
-                let alert = UIAlertController(title: "Warning", message: "Lack of name, NetID or photo", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Warning", message: "Lack of name, NetID", preferredStyle: .alert)
                 present(alert, animated: true, completion: {(action) -> Void in sleep(2)})
             }
         }

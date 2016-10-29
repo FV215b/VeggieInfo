@@ -11,11 +11,11 @@ import UIKit
 
 // Picker view data model
 enum Status {
-    case select, bs, ms, meng, phD
+    case other, bs, ms, meng, phD
     func description() -> String {
         switch self {
-        case .select:
-            return "Select"
+        case .other:
+            return "Other"
         case .bs:
             return "B.S"
         case .ms:
@@ -33,7 +33,7 @@ class Item: NSObject, NSCoding {
     var firstName: String!
     var lastName: String!
     var netID: String!
-    var genderLabel: String?
+    var genderBool: Bool!
     var heightLabel: String?
     var cityText: String?
     //var degree: String?
@@ -46,7 +46,7 @@ class Item: NSObject, NSCoding {
         static let firstNameKey = "firstName"
         static let lastNameKey = "lastName"
         static let netIDKey = "netID"
-        static let genderLabelKey = "genderLabel"
+        static let genderBoolKey = "genderBool"
         static let heightLabelKey = "heightLabel"
         static let cityTextKey = "cityText"
         //static let degreeKey = "degree"
@@ -60,7 +60,7 @@ class Item: NSObject, NSCoding {
         aCoder.encode(firstName, forKey: propertyKey.firstNameKey)
         aCoder.encode(lastName, forKey: propertyKey.lastNameKey)
         aCoder.encode(netID, forKey: propertyKey.netIDKey)
-        aCoder.encode(genderLabel, forKey: propertyKey.genderLabelKey)
+        aCoder.encode(genderBool, forKey: propertyKey.genderBoolKey)
         aCoder.encode(heightLabel, forKey: propertyKey.heightLabelKey)
         aCoder.encode(cityText, forKey: propertyKey.cityTextKey)
         //aCoder.encodeObject(degree, forKey: propertyKey.degreeKey)
@@ -70,13 +70,13 @@ class Item: NSObject, NSCoding {
         aCoder.encode(image, forKey: propertyKey.imageKey)
     }
     
-    init?(image: UIImage, firstName: String, lastName: String, netID: String, genderLabel: String?, heightLabel: String?, cityText: String?, status: Status, codingLanguage: String?, hobbyText: String?) {
+    init?(image: UIImage, firstName: String, lastName: String, netID: String, genderBool: Bool, heightLabel: String?, cityText: String?, status: Status, codingLanguage: String?, hobbyText: String?) {
         
         self.image = image
         self.firstName = firstName
         self.lastName = lastName
         self.netID = netID
-        self.genderLabel = genderLabel
+        self.genderBool = genderBool
         self.heightLabel = heightLabel
         self.cityText = cityText
         //self.degree = degree
@@ -95,7 +95,7 @@ class Item: NSObject, NSCoding {
         let firstName = aDecoder.decodeObject(forKey: propertyKey.firstNameKey) as! String
         let lastName = aDecoder.decodeObject(forKey: propertyKey.lastNameKey) as! String
         let netID = aDecoder.decodeObject(forKey: propertyKey.netIDKey) as! String
-        let genderLabel = aDecoder.decodeObject(forKey: propertyKey.genderLabelKey) as? String
+        let genderBool = aDecoder.decodeObject(forKey: propertyKey.genderBoolKey) as! Bool
         let heightLabel = aDecoder.decodeObject(forKey: propertyKey.heightLabelKey) as? String
         let cityText = aDecoder.decodeObject(forKey: propertyKey.cityTextKey) as? String
         //let degree = aDecoder.decodeObjectForKey(propertyKey.degreeKey) as? String
@@ -114,9 +114,9 @@ class Item: NSObject, NSCoding {
         case "PhD":
             status = .phD
         default:
-            status = .select
+            status = .other
         }
-        self.init(image: image, firstName: firstName, lastName: lastName, netID: netID, genderLabel: genderLabel, heightLabel: heightLabel, cityText: cityText, status:status, codingLanguage: codingLanguage, hobbyText: hobbyText)
+        self.init(image: image, firstName: firstName, lastName: lastName, netID: netID, genderBool: genderBool, heightLabel: heightLabel, cityText: cityText, status:status, codingLanguage: codingLanguage, hobbyText: hobbyText)
     }
     
     // Set data save path and file name

@@ -35,8 +35,11 @@ class detailViewController: UIViewController, SecondViewControllerDelegate {
         lastName.text = item.lastName
         personalInfo.text = "This is \(item.firstName!) \(item.lastName!)'s info."
         detailText.text = "Greetings from \(item.firstName!) \(item.lastName!)! My NetID is \(item.netID!).\n"
-        if let gender = item.genderLabel , gender != "Gender" {
-            detailText.text.append("I'm a \(gender) student.\n")
+        if item.genderBool == true {
+            detailText.text.append("I'm a male student.\n")
+        }
+        else {
+            detailText.text.append("I'm a female student.\n")
         }
         if let height = item.heightLabel , height != "Height" {
             detailText.text.append("I'm \(height) tall.\n")

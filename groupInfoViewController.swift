@@ -63,15 +63,15 @@ class groupInfoViewController: UITableViewController {
             // initialize data for Team Veggies
         else {
             let image1 = UIImage(named: "JianyuZhang.jpeg")!
-            let item1 = Item(image: image1, firstName: "Jianyu", lastName: "Zhang", netID: "jz173", genderLabel: "male", heightLabel: "5\'9\"", cityText: "Nanjing, Jiangsu, China", status: .ms, codingLanguage: "Java", hobbyText: "WORK HARD!!!")
+            let item1 = Item(image: image1, firstName: "Jianyu", lastName: "Zhang", netID: "jz173", genderBool: true, heightLabel: "5\'9\"", cityText: "Nanjing, Jiangsu, China", status: .ms, codingLanguage: "Java", hobbyText: "WORK HARD!!!")
             allItems.append(item1!)
             
             let image2 = UIImage(named: "JiashengYang.jpeg")!
-            let item2 = Item(image: image2, firstName: "Jiasheng", lastName: "Yang", netID: "jy175", genderLabel: "male", heightLabel: "5\'10\"", cityText: "Beijing, China", status: .ms, codingLanguage: "C++", hobbyText: "play soccer")
+            let item2 = Item(image: image2, firstName: "Jiasheng", lastName: "Yang", netID: "jy175", genderBool: true, heightLabel: "5\'10\"", cityText: "Beijing, China", status: .ms, codingLanguage: "C++", hobbyText: "play soccer")
             allItems.append(item2!)
             
             let image3 = UIImage(named: "YuchenZhou.jpeg")!
-            let item3 = Item(image: image3, firstName: "Yuchen", lastName: "Zhou", netID: "yz333", genderLabel: "male", heightLabel: "5\'11\"", cityText: "Hangzhou, Zhejiang, China", status: .ms, codingLanguage: "C", hobbyText: "play video games")
+            let item3 = Item(image: image3, firstName: "Yuchen", lastName: "Zhou", netID: "yz333", genderBool: true, heightLabel: "5\'11\"", cityText: "Hangzhou, Zhejiang, China", status: .ms, codingLanguage: "C", hobbyText: "play video games")
             allItems.append(item3!)
         }
     }

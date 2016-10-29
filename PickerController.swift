@@ -13,8 +13,8 @@ import UIKit
 class StatusPickerController: UIViewController,
 UIPickerViewDelegate, UIPickerViewDataSource {
     
-    let all_status = ["Select", "B.S", "M.S", "Meng", "PhD"]
-    var status = Status.select
+    let all_status = ["Other", "B.S", "M.S", "Meng", "PhD"]
+    var status = Status.other
     
     func numberOfComponents(
         in pickerView: UIPickerView) -> Int {
@@ -35,7 +35,7 @@ UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView,
                     didSelectRow row: Int, inComponent component: Int) {
         if row == 0 {
-            status = .select
+            status = .other
         }
         else if row == 1 {
             status = .bs
