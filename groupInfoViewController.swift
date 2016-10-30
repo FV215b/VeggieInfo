@@ -62,17 +62,18 @@ class groupInfoViewController: UITableViewController {
         }
             // initialize data for Team Veggies
         else {
-            let image1 = UIImage(named: "JianyuZhang")!
-            let item1 = Item(image: image1, name: "Jianyu Zhang", netID: "jz173", gender: true, team: "Veggies", height: "5\'9\"", city: "Nanjing, Jiangsu, China", status: .ms, languages: ["Java","PHP","Python"], hobbies: ["study hard","work hard"])
+            let image1 = UIImage(named: "YuchenZhou")!
+            let item1 = Item(image: image1, name: "Yuchen Zhou", netID: "yz333", gender: true, team: "Veggies", height: "5\'11\"", city: "Hangzhou, Zhejiang, China", status: .ms, languages: ["C","Swift","verilog"], hobbies: ["play video games","watch movies"])
             allItems.append(item1!)
             
             let image2 = UIImage(named: "JiashengYang")!
             let item2 = Item(image: image2, name: "Jiasheng Yang", netID: "jy175", gender: true, team: "Veggies", height: "5\'10\"", city: "Beijing, China", status: .ms, languages: ["C","C++","Python"], hobbies: ["play soccer","hike"])
             allItems.append(item2!)
             
-            let image3 = UIImage(named: "YuchenZhou")!
-            let item3 = Item(image: image3, name: "Yuchen Zhou", netID: "yz333", gender: true, team: "Veggies", height: "5\'11\"", city: "Hangzhou, Zhejiang, China", status: .ms, languages: ["C","Swift","verilog"], hobbies: ["play video games","watch movies"])
+            let image3 = UIImage(named: "JianyuZhang")!
+            let item3 = Item(image: image3, name: "Jianyu Zhang", netID: "jz173", gender: true, team: "Veggies", height: "5\'9\"", city: "Nanjing, Jiangsu, China", status: .ms, languages: ["Java","PHP","Python"], hobbies: ["study hard","work hard"])
             allItems.append(item3!)
+
         }
     }
     

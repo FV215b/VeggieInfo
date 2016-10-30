@@ -326,10 +326,56 @@ class addViewController: UIViewController, UINavigationControllerDelegate, UIIma
                     nameField.text = dict["name"] as? String
                     teamField.text = dict["team"] as? String
                     cityField.text = dict["from"] as? String
-                    
-                    let decodedImageData = NSData(base64Encoded: dict["pic"] as! String)
-                    let decodedImage = UIImage(data: decodedImageData as! Data)
-                    imageView.image = decodedImage! as UIImage
+                    if let gender = (dict["sex"] as? String), gender == "true" {
+                        genderSwitch.isOn = true
+                        genderLabel.text = "Male"
+                    }
+                    else {
+                        genderSwitch.isOn = false
+                        genderLabel.text = "Female"
+                    }
+                    if let degree = (dict["degree"] as? String) {
+                        if degree == "B.S" {
+                            statusPicker.selectRow(1, inComponent: 0, animated: true)
+                        }
+                        else if degree == "M.S" {
+                            statusPicker.selectRow(2, inComponent: 0, animated: true)
+                        }
+                        else if degree == "Meng"  {
+                            statusPicker.selectRow(3, inComponent: 0, animated: true)
+                        }
+                        else if degree == "PhD" {
+                            statusPicker.selectRow(4, inComponent: 0, animated: true)
+                        }
+                        else {
+                            statusPicker.selectRow(0, inComponent: 0, animated: true)
+                        }
+                    }
+                    if let languagesArr = (dict["languages"] as? [String]) {
+                        let count_3 = languagesArr.count
+                        if count_3 >= 1 {
+                            languagesField_1.text = languagesArr[0]
+                            if count_3 >= 2 {
+                                languagesField_2.text = languagesArr[1]
+                                if count_3 >= 3 {
+                                    languagesField_3.text = languagesArr[2]
+                                }
+                            }
+                        }
+                    }
+                    if let hobbiesArr = (dict["hobbies"] as? [String]) {
+                        let count_4 = hobbiesArr.count
+                        if count_4 >= 1 {
+                            hobbiesField_1.text = hobbiesArr[0]
+                            if count_4 >= 2 {
+                                hobbiesField_2.text = hobbiesArr[1]
+                            }
+                        }
+                    }
+                    if let decodedImageData = NSData(base64Encoded: dict["pic"] as! String) {
+                        let decodedImage = UIImage(data: decodedImageData as Data)
+                        imageView.image = decodedImage! as UIImage
+                    }
                 }
             }
             else {
