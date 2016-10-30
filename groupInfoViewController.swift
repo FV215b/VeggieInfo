@@ -123,7 +123,7 @@ class groupInfoViewController: UITableViewController {
         }
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "GroupInfoViewCell", for: indexPath) as! GroupInfoViewCell
         cell2.editButton.tag = (indexPath as NSIndexPath).row - 1
-        cell2.sendButton.tag = (indexPath as NSIndexPath).row - 1
+        //cell2.sendButton.tag = (indexPath as NSIndexPath).row - 1
         
         // Configure the cell...
         
