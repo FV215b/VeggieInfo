@@ -101,17 +101,6 @@ class detailViewController: UIViewController, SecondViewControllerDelegate, CBPe
             default: break
             }
             
-            let which2 = 1
-            switch which2 {
-            case 1: break // showing that .FullScreen is the default
-                //case 2: svc.modalPresentationStyle = .FullScreen
-                //case 3: svc.modalPresentationStyle = .PageSheet
-                //case 4: svc.modalPresentationStyle = .FormSheet
-                //case 5: svc.modalPresentationStyle = .OverFullScreen
-                    //svc.view.alpha = 0.5 // just to prove that it's working
-            default: break
-            }
-            
             self.present(svc, animated:true, completion:nil)
         case "jz173":
             let svc = AnimationViewController(nibName: "AnimationViewController", bundle: nil)
