@@ -155,10 +155,10 @@ class detailViewController: UIViewController, SecondViewControllerDelegate, CBPe
         // self.dataToSend = self.textView.text.data(using: String.Encoding.utf8, allowLossyConversion: false)
         // need to serialize the dictionary.
         var imageStr = ""
-        /*        if let image = item.image {
-         let imageData = UIImagePNGRepresentation(image)
-         imageStr = imageData!.base64EncodedString(options: .lineLength64Characters)
-         }   */
+        
+        let imageData = UIImageJPEGRepresentation(item.image, 0.1)
+        imageStr = imageData!.base64EncodedString()//imageData!.base64EncodedString(options: .lineLength64Characters)
+        
         let dic = ["name": item.name, "team": item.team, "from": item.city, "sex": "\(item.gender)", "degree": item.status.description(), "hobbies": item.hobbies, "languages": item.languages, "pic": imageStr] as [String : Any]
         do {
             self.dataToSend = try JSONSerialization.data(withJSONObject: dic, options: .prettyPrinted)

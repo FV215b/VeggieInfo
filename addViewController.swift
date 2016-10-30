@@ -323,6 +323,10 @@ class addViewController: UIViewController, UINavigationControllerDelegate, UIIma
                     nameField.text = dict["name"] as? String
                     teamField.text = dict["team"] as? String
                     cityField.text = dict["from"] as? String
+                    
+                    let decodedImageData = NSData(base64Encoded: dict["pic"] as! String)
+                    let decodedImage = UIImage(data: decodedImageData as! Data)
+                    imageView.image = decodedImage! as UIImage
                 }
             }
             else {
