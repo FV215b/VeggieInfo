@@ -12,7 +12,6 @@ import UIKit
 class detailViewController: UIViewController, SecondViewControllerDelegate {
     var item: Item!
     var number: Int!
-    var hobbystr: String! = ""
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var name: UILabel!

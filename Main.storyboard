@@ -777,7 +777,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nf2-tc-p3T">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nf2-tc-p3T">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="49" id="YOo-On-a8x"/>
                                     <constraint firstAttribute="height" constant="31" id="vSn-Tw-zDl"/>
@@ -1022,6 +1022,6 @@
         <image name="UserImage" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u1y-w3-ZWI"/>
+        <segue reference="UvB-xS-8GX"/>
     </inferredMetricsTieBreakers>
 </document>
