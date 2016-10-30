@@ -21,7 +21,7 @@ class groupInfoViewController: UITableViewController {
     func filterContentForSearchText(_ searchText: String, scope: String) {
         if (scope == "Name") {
             filteredItems = allItems.filter{item in
-                return item.firstName.lowercased().contains(searchText.lowercased()) || item.lastName.lowercased().contains(searchText.lowercased())}
+                return item.name.lowercased().contains(searchText.lowercased())}
         }
         else if (scope == "NetID") {
             filteredItems = allItems.filter{item in
@@ -62,16 +62,16 @@ class groupInfoViewController: UITableViewController {
         }
             // initialize data for Team Veggies
         else {
-            let image1 = UIImage(named: "JianyuZhang.jpeg")!
-            let item1 = Item(image: image1, firstName: "Jianyu", lastName: "Zhang", netID: "jz173", genderBool: true, heightLabel: "5\'9\"", cityText: "Nanjing, Jiangsu, China", status: .ms, codingLanguage: "Java", hobbyText: "WORK HARD!!!")
+            let image1 = UIImage(named: "JianyuZhang")!
+            let item1 = Item(image: image1, name: "Jianyu Zhang", netID: "jz173", gender: true, team: "Veggies", height: "5\'9\"", city: "Nanjing, Jiangsu, China", status: .ms, languages: ["Java","PHP","Python"], hobbies: ["study hard","work hard"])
             allItems.append(item1!)
             
-            let image2 = UIImage(named: "JiashengYang.jpeg")!
-            let item2 = Item(image: image2, firstName: "Jiasheng", lastName: "Yang", netID: "jy175", genderBool: true, heightLabel: "5\'10\"", cityText: "Beijing, China", status: .ms, codingLanguage: "C++", hobbyText: "play soccer")
+            let image2 = UIImage(named: "JiashengYang")!
+            let item2 = Item(image: image2, name: "Jiasheng Yang", netID: "jy175", gender: true, team: "Veggies", height: "5\'10\"", city: "Beijing, China", status: .ms, languages: ["C","C++","Python"], hobbies: ["play soccer","hike"])
             allItems.append(item2!)
             
-            let image3 = UIImage(named: "YuchenZhou.jpeg")!
-            let item3 = Item(image: image3, firstName: "Yuchen", lastName: "Zhou", netID: "yz333", genderBool: true, heightLabel: "5\'11\"", cityText: "Hangzhou, Zhejiang, China", status: .ms, codingLanguage: "C", hobbyText: "play video games")
+            let image3 = UIImage(named: "YuchenZhou")!
+            let item3 = Item(image: image3, name: "Yuchen Zhou", netID: "yz333", gender: true, team: "Veggies", height: "5\'11\"", city: "Hangzhou, Zhejiang, China", status: .ms, languages: ["C","Swift","verilog"], hobbies: ["play video games","watch movies"])
             allItems.append(item3!)
         }
     }
@@ -123,6 +123,7 @@ class groupInfoViewController: UITableViewController {
         }
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "GroupInfoViewCell", for: indexPath) as! GroupInfoViewCell
         cell2.editButton.tag = (indexPath as NSIndexPath).row - 1
+        cell2.sendButton.tag = (indexPath as NSIndexPath).row - 1
         
         // Configure the cell...
         
@@ -133,9 +134,9 @@ class groupInfoViewController: UITableViewController {
         else {
             tempItem = allItems[(indexPath as NSIndexPath).row - 1]
         }
-        cell2.textLabel?.text = "\(tempItem.firstName!) \(tempItem.lastName!)"
-        cell2.detailTextLabel?.text = tempItem.netID!
-        cell2.imageView?.image = tempItem.image!
+        cell2.textLabel?.text = tempItem.name
+        cell2.detailTextLabel?.text = tempItem.netID
+        cell2.imageView?.image = tempItem.image
         
         return cell2
     }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondViewController" customModule="Project4_Animation">
@@ -25,14 +26,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5sF-zM-MUl">
-                    <rect key="frame" x="90" y="280" width="100" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="3DZ-ZK-g8f"/>
                         <constraint firstAttribute="width" constant="100" id="zPO-3t-0To"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8aM-oO-SYX">
-                    <rect key="frame" x="0.0" y="450" width="320" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="7Jr-Nr-7wt"/>
                         <constraint firstAttribute="width" constant="320" id="kkM-NG-r8k"/>
@@ -42,44 +41,39 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3g-OP-1oY" customClass="drawingView" customModule="Veggie_Info" customModuleProvider="target">
-                    <rect key="frame" x="125" y="165" width="40" height="40"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="UC3-rA-4EF"/>
                         <constraint firstAttribute="width" constant="40" id="WZc-sb-bRV"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lei-Qa-acE" customClass="drawingView" customModule="Veggie_Info" customModuleProvider="target">
-                    <rect key="frame" x="125" y="165" width="40" height="40"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="4A9-XK-lt9"/>
                         <constraint firstAttribute="height" constant="40" id="JSd-qv-6Ll"/>
                     </constraints>
                 </view>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ehy-61-Eyr">
-                    <rect key="frame" x="45" y="400" width="200" height="31"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="196" id="eHr-KW-i4f"/>
                         <constraint firstAttribute="height" constant="30" id="kU0-e4-HnQ"/>
                     </constraints>
                 </slider>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game" translatesAutoresizingMaskIntoConstraints="NO" id="S2S-mu-yU1">
-                    <rect key="frame" x="188" y="40" width="115" height="100"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Game" translatesAutoresizingMaskIntoConstraints="NO" id="S2S-mu-yU1">
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="WPt-de-sjd"/>
                         <constraint firstAttribute="width" constant="115" id="Zbh-mq-HyR"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsi-7e-6Cc">
-                    <rect key="frame" x="25" y="60" width="80" height="30"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="0kj-9F-VYt"/>
                         <constraint firstAttribute="width" constant="80" id="ZVr-do-RXe"/>
                     </constraints>
                     <state key="normal" title="Return">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="doDismiss:" destination="-1" eventType="touchUpInside" id="ltc-62-d5t"/>
@@ -102,10 +96,14 @@
                 <constraint firstItem="S2S-mu-yU1" firstAttribute="top" secondItem="1" secondAttribute="top" constant="40" id="xrY-nO-TdS"/>
                 <constraint firstItem="bsi-7e-6Cc" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="25" id="xyh-U4-0nN"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>
-        <image name="game" width="421" height="364"/>
+        <image name="Game" width="421" height="364"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

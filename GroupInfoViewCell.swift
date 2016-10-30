@@ -12,6 +12,7 @@ import UIKit
 // Cell Class for Team Member
 class GroupInfoViewCell: UITableViewCell {
     
+    @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellName: UILabel!

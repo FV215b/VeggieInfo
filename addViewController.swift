@@ -11,43 +11,50 @@ import UIKit
 
 class addViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var firstName: UITextField!
-    @IBOutlet weak var lastName: UITextField!
-    @IBOutlet weak var netID: UITextField!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var teamField: UITextField!
+    @IBOutlet weak var netIDField: UITextField!
     @IBOutlet weak var genderSwitch: UISwitch!
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var heightSlide: UISlider!
     @IBOutlet weak var heightLabel: UILabel!
-    @IBOutlet weak var cityText: UITextField!
-    //@IBOutlet weak var degree: UITextField!
-    @IBOutlet weak var codingLanguage: UITextField!
-    @IBOutlet weak var hobbyText: UITextField!
+    @IBOutlet weak var cityField: UITextField!
+    @IBOutlet weak var languagesField_1: UITextField!
+    @IBOutlet weak var languagesField_2: UITextField!
+    @IBOutlet weak var languagesField_3: UITextField!
+    @IBOutlet weak var hobbiesField_1: UITextField!
+    @IBOutlet weak var hobbiesField_2: UITextField!
+    @IBOutlet weak var bluetoothSwitch: UISwitch!
     
     var statusPicker: UIPickerView!
     let statusViewController = StatusPickerController()
     
     var item: Item!
-    var number: Int?  // Optional number is for deciding which person's info is being edited or it's a new adding(nil)
+    var number: Int?  // Optional number decides which person's info is being edited or it's a new adding(nil)
     var y: CGFloat = 0 // How many pixels the view should move up when keyboard pops up
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Add event handlers for view rising-up or falling-down when keyboard pops up
-        cityText.addTarget(self, action: #selector(addViewController.viewRaiseUp(_:)), for: .editingDidBegin)
-        cityText.addTarget(self, action: #selector(addViewController.viewFallDown(_:)), for: .editingDidEnd)
-        //degree.addTarget(self, action: #selector(addViewController.viewRaiseUp(_:)), forControlEvents: .EditingDidBegin)
-        //degree.addTarget(self, action: #selector(addViewController.viewFallDown(_:)), forControlEvents: .EditingDidEnd)
-        codingLanguage.addTarget(self, action: #selector(addViewController.viewRaiseUp(_:)), for: .editingDidBegin)
-        codingLanguage.addTarget(self, action: #selector(addViewController.viewFallDown(_:)), for: .editingDidEnd)
-        hobbyText.addTarget(self, action: #selector(addViewController.viewRaiseUp(_:)), for: .editingDidBegin)
-        hobbyText.addTarget(self, action: #selector(addViewController.viewFallDown(_:)), for: .editingDidEnd)
+        cityField.addTarget(self, action: #selector(addViewController.viewRaiseUp(_:)), for: .editingDidBegin)
+        cityField.addTarget(self, action: #selector(addViewController.viewFallDown(_:)), for: .editingDidEnd)
+        languagesField_1.addTarget(self, action: #selector(addViewController.viewRaiseUp(_:)), for: .editingDidBegin)
+        languagesField_1.addTarget(self, action: #selector(addViewController.viewFallDown(_:)), for: .editingDidEnd)
+        languagesField_2.addTarget(self, action: #selector(addViewController.viewRaiseUp(_:)), for: .editingDidBegin)
+        languagesField_2.addTarget(self, action: #selector(addViewController.viewFallDown(_:)), for: .editingDidEnd)
+        languagesField_3.addTarget(self, action: #selector(addViewController.viewRaiseUp(_:)), for: .editingDidBegin)
+        languagesField_3.addTarget(self, action: #selector(addViewController.viewFallDown(_:)), for: .editingDidEnd)
+        hobbiesField_1.addTarget(self, action: #selector(addViewController.viewRaiseUp(_:)), for: .editingDidBegin)
+        hobbiesField_1.addTarget(self, action: #selector(addViewController.viewFallDown(_:)), for: .editingDidEnd)
+        hobbiesField_2.addTarget(self, action: #selector(addViewController.viewRaiseUp(_:)), for: .editingDidBegin)
+        hobbiesField_2.addTarget(self, action: #selector(addViewController.viewFallDown(_:)), for: .editingDidEnd)
         genderSwitch.addTarget(self, action: #selector(addViewController.switched(_:)), for: .touchUpInside)
         heightSlide.addTarget(self, action: #selector(addViewController.slided(_:)), for: .valueChanged)
         
         // Set degree picker
         statusPicker = UIPickerView(frame: CGRect(x: 0, y: 0, width: 70, height: 80))
-        statusPicker.center = CGPoint(x: 105, y: 380)
+        statusPicker.center = CGPoint(x: 105, y: 325)
         statusPicker.delegate = statusViewController
         statusPicker.dataSource = statusViewController
         self.addChildViewController(statusViewController)
@@ -61,11 +68,10 @@ class addViewController: UIViewController, UINavigationControllerDelegate, UIIma
     
     func loadDetailInfo() {
         imageView.image = item.image
-        firstName.text = item.firstName
-        lastName.text = item.lastName
-        netID.text = item.netID
-        heightLabel.text = item.heightLabel
-        if item.genderBool == true {
+        nameField.text = item.name
+        teamField.text = item.team
+        netIDField.text = item.netID
+        if item.gender == true {
             genderSwitch.isOn = true
             genderLabel.text = "Male"
         }
@@ -73,11 +79,25 @@ class addViewController: UIViewController, UINavigationControllerDelegate, UIIma
             genderSwitch.isOn = false
             genderLabel.text = "Female"
         }
-        cityText.text = item.cityText
-        //degree.text = item.degree
-        codingLanguage.text = item.codingLanguage
-        hobbyText.text = item.hobbyText
-        
+        heightLabel.text = item.height
+        cityField.text = item.city
+        let count_1 = item.languages.count
+        if count_1 >= 1 {
+            languagesField_1.text = item.languages[0]
+            if count_1 >= 2 {
+                languagesField_2.text = item.languages[1]
+                if count_1 >= 3 {
+                    languagesField_3.text = item.languages[2]
+                }
+            }
+        }
+        let count_2 = item.languages.count
+        if count_2 >= 1 {
+            hobbiesField_1.text = item.hobbies[0]
+            if count_2 >= 2 {
+                hobbiesField_2.text = item.hobbies[1]
+            }
+        }
         let status = item.status
         if status == .bs {
             statusPicker.selectRow(1, inComponent: 0, animated: true)
@@ -134,18 +154,19 @@ class addViewController: UIViewController, UINavigationControllerDelegate, UIIma
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let firstName = firstName.text, let lastName = lastName.text, let netID = netID.text {
-            if self.firstName.text != "" && self.lastName.text != "" && self.netID.text != "" {
-                item = Item(image: imageView.image!, firstName: firstName, lastName: lastName, netID: netID, genderBool: genderSwitch.isOn, heightLabel: heightLabel.text, cityText: cityText.text, status: statusViewController.getValue(), codingLanguage: codingLanguage.text, hobbyText: hobbyText.text)
+        if let name = nameField.text, let netID = netIDField.text, let team = teamField.text, let city = cityField.text, let lang1 = languagesField_1.text, let lang2 = languagesField_2.text, let lang3 = languagesField_3.text, let hobb1 = hobbiesField_1.text, let hobb2 = hobbiesField_2.text {
+            if name != "" && netID != "" && team != "" && city != "" && lang1 != "" && lang2 != "" && lang3 != "" && hobb1 != "" && hobb2 != "" {
+                let gender = (genderLabel.text == "Male") ? true : false
+                item = Item(image: imageView.image!, name: name, netID: netID, gender: gender, team: team, height: heightLabel.text!, city: city, status: statusViewController.getValue(), languages: [lang1, lang2, lang3], hobbies: [hobb1, hobb2])
             }
                 // Pop up an 2s' alert
             else {
-                let alert = UIAlertController(title: "Warning", message: "Lack of name, NetID", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Warning", message: "Missing some information", preferredStyle: .alert)
                 present(alert, animated: true, completion: {(action) -> Void in sleep(2)})
             }
         }
         else {
-            let alert = UIAlertController(title: "Warning", message: "Lack of name, NetID or photo", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Warning", message: "Missing some information", preferredStyle: .alert)
             present(alert, animated: true, completion: {(action) -> Void in sleep(2)})
         }
     }

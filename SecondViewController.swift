@@ -13,8 +13,6 @@ protocol SecondViewControllerDelegate: class {
     func acceptData(_ data: AnyObject!)
 }
 
-var netID: String!
-
 // This is the controller of Animation
 class SecondViewController: UIViewController {
     
@@ -29,8 +27,6 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var rateSlide: UISlider!
     @IBOutlet weak var gameImage: UIImageView!
     
-    var data: AnyObject?
-    var hobby: String! = ""
     var rate: Double = 0.4 {
         didSet {
             superMarioTopConstraint.constant += 80
@@ -58,7 +54,6 @@ class SecondViewController: UIViewController {
     }
     
     func animateImageTransitions() {
-        
         // Update any changed view (mainly for the slider)
         UIView.animate(withDuration: 0, delay: 0, options: [], animations: {
             self.view.layoutIfNeeded()
@@ -81,35 +76,29 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if netID == "yz333" {
-            superMario.image = UIImage(named: "SuperMario.png")
-            
-            // Make a attributed string showing hobbies at the bottom of the screen
-            let hobbyFont = UIFont(name: "Bradley Hand", size: 30.0)
-            let hobbyAttritubes = [
-                NSFontAttributeName: hobbyFont!
-                ,NSForegroundColorAttributeName: UIColor.red
-                ,NSStrokeColorAttributeName: UIColor.black
-                ,NSStrokeWidthAttributeName: -1
+        superMario.image = UIImage(named: "SuperMario")
+        
+        // Make a attributed string showing hobbies at the bottom of the screen
+        let hobbyFont = UIFont(name: "Bradley Hand", size: 30.0)
+        let hobbyAttritubes = [
+            NSFontAttributeName: hobbyFont!
+            ,NSForegroundColorAttributeName: UIColor.red
+            ,NSStrokeColorAttributeName: UIColor.black
+            ,NSStrokeWidthAttributeName: -1
             ] as [String : Any]
-            hobbyLabel.attributedText = NSAttributedString(string: hobby, attributes: hobbyAttritubes)
-            dv.backgroundColor = UIColor.clear
-            dvStatic.backgroundColor = UIColor.clear
-            
-            // Set a slider to change animation bounce rate
-            rateSlide.addTarget(self, action: #selector(SecondViewController.slided(_:)), for: .valueChanged)
-        }
-        else {
-            rateSlide.isHidden = true
-            gameImage.isHidden = true
-        }
+        hobbyLabel.attributedText = NSAttributedString(string: "Play video games", attributes: hobbyAttritubes)
+        dv.backgroundColor = UIColor.clear
+        dvStatic.backgroundColor = UIColor.clear
+        
+        // Set a slider to change animation bounce rate
+        rateSlide.addTarget(self, action: #selector(SecondViewController.slided(_:)), for: .valueChanged)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if self.isBeingDismissed {
-            self.delegate?.acceptData("Passing string back to first VC" as AnyObject!)
-        }
+        //if self.isBeingDismissed {
+        //    self.delegate?.acceptData("Flip back to detail page" as AnyObject!)
+        //}
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
