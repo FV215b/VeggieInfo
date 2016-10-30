@@ -176,6 +176,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wxb-xT-HTD">
+                                <rect key="frame" x="30" y="553" width="241" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -260,6 +264,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="advertisingProgress" destination="Wxb-xT-HTD" id="dvZ-zA-bws"/>
                         <outlet property="advertisingSwitch" destination="uaM-rz-5Lm" id="Xfu-NA-RVr"/>
                         <outlet property="detailText" destination="5EO-0D-29t" id="7gj-hG-ile"/>
                         <outlet property="imageView" destination="mc3-wq-zLn" id="cz8-vW-YIW"/>
@@ -810,6 +815,10 @@
                                     <action selector="receiveDataFromBluetooth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OjN-C2-M1q"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30x-Iu-XPV">
+                                <rect key="frame" x="88" y="507" width="198" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -994,6 +1003,7 @@
                         <outlet property="languagesField_3" destination="EH9-mu-wo0" id="yFI-Ln-Z9Z"/>
                         <outlet property="nameField" destination="dnL-rn-fpr" id="p5q-wK-rN9"/>
                         <outlet property="netIDField" destination="Ekk-Zv-DE6" id="qMe-kN-b1Q"/>
+                        <outlet property="receivingProgressBar" destination="30x-Iu-XPV" id="S5M-HB-8LR"/>
                         <outlet property="teamField" destination="I5x-H0-Sbq" id="SoR-FR-bT2"/>
                     </connections>
                 </viewController>

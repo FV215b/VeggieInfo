@@ -21,11 +21,14 @@ class detailViewController: UIViewController, SecondViewControllerDelegate, CBPe
     @IBOutlet weak var detailText: UITextView!
     
     @IBOutlet weak var advertisingSwitch: UISwitch!
+    @IBOutlet weak var advertisingProgress: UIProgressView!
+    
     var peripheralManager:CBPeripheralManager!
     var transferCharacteristic:CBMutableCharacteristic!
     var dataToSend:Data!
     var sentDataCount:Int = 0
     var sentEOM:Bool = false
+    var progress: Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -156,7 +159,7 @@ class detailViewController: UIViewController, SecondViewControllerDelegate, CBPe
         // need to serialize the dictionary.
         var imageStr = ""
         
-        let imageData = UIImageJPEGRepresentation(item.image, 0.1)
+        let imageData = UIImageJPEGRepresentation(item.image, 0.0)
         imageStr = imageData!.base64EncodedString()//imageData!.base64EncodedString(options: .lineLength64Characters)
         
         let dic = ["name": item.name, "team": item.team, "from": item.city, "sex": "\(item.gender)", "degree": item.status.description(), "hobbies": item.hobbies, "languages": item.languages, "pic": imageStr] as [String : Any]
@@ -175,6 +178,7 @@ class detailViewController: UIViewController, SecondViewControllerDelegate, CBPe
     
     func sendData() {
         if (sentEOM) {                // sending the end of message indicator
+            advertisingProgress.setProgress(1.0, animated: true)
             let didSend:Bool = self.peripheralManager.updateValue(endOfMessage!, for: self.transferCharacteristic, onSubscribedCentrals: nil)
             
             if (didSend) {
@@ -186,6 +190,13 @@ class detailViewController: UIViewController, SecondViewControllerDelegate, CBPe
             }
         }
         else {                          // sending the payload
+            if (progress == 1.0) {
+                progress = 0.0
+            } else {
+                progress += 0.001
+            }
+            advertisingProgress.setProgress(progress, animated: true)
+            
             if (self.sentDataCount >= self.dataToSend.count) {
                 return
             }

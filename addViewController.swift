@@ -28,9 +28,11 @@ class addViewController: UIViewController, UINavigationControllerDelegate, UIIma
     @IBOutlet weak var bluetoothSwitch: UISwitch!
     
     @IBOutlet weak var connectingBLEButton: UIButton!
+    @IBOutlet weak var receivingProgressBar: UIProgressView!
     var centralManager:CBCentralManager!
     var connectingPeripheral:CBPeripheral!
     var data:String = ""
+    var progress: Float = 0.0
     
     var statusPicker: UIPickerView!
     let statusViewController = StatusPickerController()
@@ -306,6 +308,7 @@ class addViewController: UIViewController, UINavigationControllerDelegate, UIIma
             let dataString = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue)
             
             if dataString == "EOM" {
+                receivingProgressBar.setProgress(1.0, animated: true)
                 print(self.data)
                 //textView.text = self.data
                 // display the received data in the corresponding field
@@ -330,6 +333,12 @@ class addViewController: UIViewController, UINavigationControllerDelegate, UIIma
                 }
             }
             else {
+                if progress == 1.0 {
+                    progress = 0.0
+                } else {
+                    progress += 0.001
+                }
+                receivingProgressBar.setProgress(progress, animated: true)
                 let strng:String = dataString as! String
                 self.data += strng
                 print("received \(dataString)")
