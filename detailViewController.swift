@@ -10,7 +10,7 @@
 import UIKit
 import CoreBluetooth
 
-class detailViewController: UIViewController, SecondViewControllerDelegate, CBPeripheralManagerDelegate {
+class detailViewController: UIViewController, SecondViewControllerDelegate, jsySecondViewControllerDelegate, CBPeripheralManagerDelegate {
     var item: Item!
     var number: Int!
     
@@ -131,6 +131,16 @@ class detailViewController: UIViewController, SecondViewControllerDelegate, CBPe
             }
             
             self.present(svc, animated:true, completion:nil)
+            
+        case "jy175":
+            let svc = jsySecondViewController(nibName: "jsySecondView", bundle: nil)
+            svc.delegate = self
+            
+            svc.modalTransitionStyle = .partialCurl
+            self.view.window!.backgroundColor = UIColor.white
+            
+            self.present(svc, animated:true, completion:nil)
+
         default:
             break
         }
