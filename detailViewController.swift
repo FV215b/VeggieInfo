@@ -113,6 +113,35 @@ class detailViewController: UIViewController, SecondViewControllerDelegate, CBPe
             }
             
             self.present(svc, animated:true, completion:nil)
+        case "jz173":
+            let svc = AnimationViewController(nibName: "AnimationViewController", bundle: nil)
+            //svc.data = "flip from detail page to animation" as AnyObject?
+            //svc.delegate = self
+            
+            let which = 4
+            switch which {
+                //case 1: break // showing that .CoverVertical is the default
+                //case 2: svc.modalTransitionStyle = .CoverVertical
+            //case 3: svc.modalTransitionStyle = .CrossDissolve
+            case 4: svc.modalTransitionStyle = .partialCurl
+            self.view.window!.backgroundColor = UIColor.white
+                //case 5: svc.modalTransitionStyle = .FlipHorizontal
+            //self.view.window!.backgroundColor = UIColor.greenColor()
+            default: break
+            }
+            
+            let which2 = 1
+            switch which2 {
+            case 1: break // showing that .FullScreen is the default
+                //case 2: svc.modalPresentationStyle = .FullScreen
+                //case 3: svc.modalPresentationStyle = .PageSheet
+                //case 4: svc.modalPresentationStyle = .FormSheet
+                //case 5: svc.modalPresentationStyle = .OverFullScreen
+            //svc.view.alpha = 0.5 // just to prove that it's working
+            default: break
+            }
+            
+            self.present(svc, animated:true, completion:nil)
         default:
             break
         }
