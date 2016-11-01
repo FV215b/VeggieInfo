@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		25865E541DB45A80007F9245 /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25865E531DB45A80007F9245 /* PickerController.swift */; };
-		25CB6B971DC6AFA600AA60BB /* jsySecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CB6B961DC6AFA600AA60BB /* jsySecondViewController.swift */; };
-		25EC40DC1DC6AFFE008CDDC9 /* jsySecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25EC40DB1DC6AFFE008CDDC9 /* jsySecondView.xib */; };
 		8CBCE0C51DC6508700B03533 /* commonBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCE0C41DC6508700B03533 /* commonBluetooth.swift */; };
 		8CBCE0C71DC683FF00B03533 /* AnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CBCE0C61DC683FF00B03533 /* AnimationViewController.xib */; };
 		8CBCE0C91DC6867000B03533 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCE0C81DC6867000B03533 /* AnimationViewController.swift */; };
 		8CBCE0CB1DC6885C00B03533 /* DrawTennis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCE0CA1DC6885C00B03533 /* DrawTennis.swift */; };
 		8CBCE0CD1DC68FBE00B03533 /* rhythm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CBCE0CC1DC68FBE00B03533 /* rhythm.mp3 */; };
+		B931EF931DC9224300EC66BD /* jsySecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B931EF911DC9224300EC66BD /* jsySecondView.xib */; };
+		B931EF941DC9224300EC66BD /* jsySecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B931EF921DC9224300EC66BD /* jsySecondViewController.swift */; };
 		B9D8E0CE1D9867B800F8EBB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D8E0CD1D9867B800F8EBB0 /* AppDelegate.swift */; };
 		B9D8E0D51D9867B800F8EBB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D8E0D41D9867B800F8EBB0 /* Assets.xcassets */; };
 		B9D8E0D81D9867B800F8EBB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D8E0D61D9867B800F8EBB0 /* LaunchScreen.storyboard */; };
@@ -32,13 +32,13 @@
 
 /* Begin PBXFileReference section */
 		25865E531DB45A80007F9245 /* PickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = SOURCE_ROOT; };
-		25CB6B961DC6AFA600AA60BB /* jsySecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = jsySecondViewController.swift; path = ../../../../JiashengYang/Downloads/hw7/Project4_Animation/jsySecondViewController.swift; sourceTree = "<group>"; };
-		25EC40DB1DC6AFFE008CDDC9 /* jsySecondView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = jsySecondView.xib; path = ../../../../JiashengYang/Downloads/hw7/Project4_Animation/jsySecondView.xib; sourceTree = "<group>"; };
 		8CBCE0C41DC6508700B03533 /* commonBluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commonBluetooth.swift; sourceTree = "<group>"; };
 		8CBCE0C61DC683FF00B03533 /* AnimationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnimationViewController.xib; sourceTree = "<group>"; };
 		8CBCE0C81DC6867000B03533 /* AnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		8CBCE0CA1DC6885C00B03533 /* DrawTennis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawTennis.swift; sourceTree = "<group>"; };
 		8CBCE0CC1DC68FBE00B03533 /* rhythm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rhythm.mp3; sourceTree = "<group>"; };
+		B931EF911DC9224300EC66BD /* jsySecondView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = jsySecondView.xib; sourceTree = "<group>"; };
+		B931EF921DC9224300EC66BD /* jsySecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsySecondViewController.swift; sourceTree = "<group>"; };
 		B9D8E0CA1D9867B800F8EBB0 /* Veggie_Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Veggie_Info.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D8E0CD1D9867B800F8EBB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9D8E0D41D9867B800F8EBB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,14 +92,14 @@
 				B9D8E0D61D9867B800F8EBB0 /* LaunchScreen.storyboard */,
 				B9D8E0F01D986B1800F8EBB0 /* SecondViewController.xib */,
 				8CBCE0C61DC683FF00B03533 /* AnimationViewController.xib */,
+				B931EF911DC9224300EC66BD /* jsySecondView.xib */,
 				8CBCE0C81DC6867000B03533 /* AnimationViewController.swift */,
 				8CBCE0CA1DC6885C00B03533 /* DrawTennis.swift */,
 				B9E329BA1D9A15D5005A1411 /* DrawingView.swift */,
+				B9D8E0EF1D986B1800F8EBB0 /* SecondViewController.swift */,
+				B931EF921DC9224300EC66BD /* jsySecondViewController.swift */,
 				B9D8E0DF1D98685100F8EBB0 /* addViewController.swift */,
 				B9D8E0E01D98685100F8EBB0 /* detailViewController.swift */,
-				25CB6B961DC6AFA600AA60BB /* jsySecondViewController.swift */,
-				25EC40DB1DC6AFFE008CDDC9 /* jsySecondView.xib */,
-				B9D8E0EF1D986B1800F8EBB0 /* SecondViewController.swift */,
 				25865E531DB45A80007F9245 /* PickerController.swift */,
 				B9D8E0E11D98685100F8EBB0 /* groupInfoViewController.swift */,
 				B9FF1BD61DB2D30200365604 /* GroupInfoViewCell.swift */,
@@ -175,10 +175,10 @@
 				8CBCE0CD1DC68FBE00B03533 /* rhythm.mp3 in Resources */,
 				B9D8E0F21D986B1800F8EBB0 /* SecondViewController.xib in Resources */,
 				8CBCE0C71DC683FF00B03533 /* AnimationViewController.xib in Resources */,
-				25EC40DC1DC6AFFE008CDDC9 /* jsySecondView.xib in Resources */,
 				B9D8E0E81D98686600F8EBB0 /* Main.storyboard in Resources */,
 				B9D8E0D81D9867B800F8EBB0 /* LaunchScreen.storyboard in Resources */,
 				B9D8E0D51D9867B800F8EBB0 /* Assets.xcassets in Resources */,
+				B931EF931DC9224300EC66BD /* jsySecondView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9FF1BDB1DB376EB00365604 /* TeamViewCell.swift in Sources */,
+				B931EF941DC9224300EC66BD /* jsySecondViewController.swift in Sources */,
 				B9E329BB1D9A15D5005A1411 /* DrawingView.swift in Sources */,
 				B9D8E0F11D986B1800F8EBB0 /* SecondViewController.swift in Sources */,
 				8CBCE0C91DC6867000B03533 /* AnimationViewController.swift in Sources */,
@@ -198,7 +199,6 @@
 				25865E541DB45A80007F9245 /* PickerController.swift in Sources */,
 				8CBCE0C51DC6508700B03533 /* commonBluetooth.swift in Sources */,
 				8CBCE0CB1DC6885C00B03533 /* DrawTennis.swift in Sources */,
-				25CB6B971DC6AFA600AA60BB /* jsySecondViewController.swift in Sources */,
 				B9D8E0E31D98685100F8EBB0 /* addViewController.swift in Sources */,
 				B9D8E0CE1D9867B800F8EBB0 /* AppDelegate.swift in Sources */,
 				B9FF1BD71DB2D30200365604 /* GroupInfoViewCell.swift in Sources */,
