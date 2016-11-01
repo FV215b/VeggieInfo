@@ -318,7 +318,7 @@ class addViewController: UIViewController, UINavigationControllerDelegate, UIIma
                     print("\(dict["name"] as! String)")
                     print("\(dict["team"] as! String)")
                     print("\(dict["from"] as! String)")
-                    print("\(dict["sex"] as! String)")
+                    print("\(dict["sex"] as! Bool)")
                     print("\(dict["degree"] as! String)")
                     print("\(dict["hobbies"] as! [String])")
                     print("\(dict["languages"] as! [String])")
@@ -326,7 +326,8 @@ class addViewController: UIViewController, UINavigationControllerDelegate, UIIma
                     nameField.text = dict["name"] as? String
                     teamField.text = dict["team"] as? String
                     cityField.text = dict["from"] as? String
-                    if let gender = (dict["sex"] as? String), gender == "true" {
+                    //genderSwitch.isOn = gender
+                    if let _ = (dict["sex"] as? Bool) {
                         genderSwitch.isOn = true
                         genderLabel.text = "Male"
                     }
