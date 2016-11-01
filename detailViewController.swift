@@ -190,7 +190,7 @@ class detailViewController: UIViewController, SecondViewControllerDelegate, jsyS
         let imageData = UIImageJPEGRepresentation(item.image, 0.0)
         imageStr = imageData!.base64EncodedString()//imageData!.base64EncodedString(options: .lineLength64Characters)
         
-        let dic = ["name": item.name, "team": item.team, "from": item.city, "sex": "\(item.gender)", "degree": item.status.description(), "hobbies": item.hobbies, "languages": item.languages, "pic": imageStr] as [String : Any]
+        let dic = ["name": item.name, "team": item.team, "from": item.city, "sex": item.gender, "degree": item.status.description(), "hobbies": item.hobbies, "languages": item.languages, "pic": imageStr] as [String : Any]
         do {
             self.dataToSend = try JSONSerialization.data(withJSONObject: dic, options: .prettyPrinted)
         } catch {

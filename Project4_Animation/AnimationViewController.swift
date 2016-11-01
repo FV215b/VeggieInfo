@@ -25,6 +25,29 @@ class AnimationViewController: UIViewController {
         
         // Set animation
         racketImageView.image = UIImage(named: "tennis_right")
+/*
+        let tennis = DrawTennis()
+        
+        tennis.frame = CGRect(x: 55, y: 300, width: 20, height: 20)
+        tennis.backgroundColor = UIColor.white
+        
+        self.view.addSubview(tennis)
+        
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 16,y: 239))
+        path.addCurve(to: CGPoint(x: 0, y: 239), controlPoint1: CGPoint(x: 220, y: 239), controlPoint2: CGPoint(x: 320, y: 239))
+        
+        let anim = CAKeyframeAnimation(keyPath: "position")
+        
+        anim.path = path.cgPath
+        
+        anim.rotationMode = kCAAnimationRotateAuto
+        anim.repeatCount = Float.infinity
+        anim.duration = 5.0
+        
+        tennis.layer.add(anim, forKey: "animate position along path")   */
+        
+        super.viewDidLoad()
         
         let tennis = DrawTennis()
         
